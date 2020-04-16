@@ -10,7 +10,7 @@ posture.src = "/Posture/Posture.m4a";
 const numCalibrations = 30;
 const numWrongFramesNeeded = 90;
 const tolerance = .2;
-const warningTimeout = 15 * 1000;
+const warningTimeout = 8 * 1000;
 
 let targetHeight = 0;
 let targetY = 0;
