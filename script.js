@@ -26,7 +26,13 @@ Promise.all([
   faceapi.nets.faceLandmark68Net.loadFromUri('/Posture/models'),
   faceapi.nets.faceRecognitionNet.loadFromUri('/Posture/models'),
   faceapi.nets.faceExpressionNet.loadFromUri('/Posture/models')
-]).then(startVideo)
+]).then(startVideo).catch(e => {
+  console.log("Yo");
+  var element = document.createElement("P")
+  var text = document.createTextNode("An error occurred. Please contact crschriever@gmail.com. Message: " + e.message);
+  element.appendChild(text);
+  document.body.prepend(element);
+})
 
 function startVideo() {
   navigator.getUserMedia(
