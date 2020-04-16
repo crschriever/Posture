@@ -5,7 +5,7 @@ const calibrateContainer = $("#calibrate");
 const calibrating = $("#calibrating");
 const calibrateDoneContainer = $("#done-calibrating");
 const posture = new Audio();
-posture.src = "Posture.m4a";
+posture.src = "/Posture/Posture.m4a";
 
 const numCalibrations = 30;
 const numWrongFramesNeeded = 90;
@@ -22,10 +22,10 @@ let lastWarning = 0;
 let numWrongFrames = 0;
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('/Posture/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/Posture/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/Posture/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/Posture/models')
 ]).then(startVideo)
 
 function startVideo() {
