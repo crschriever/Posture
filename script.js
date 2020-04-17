@@ -1,3 +1,5 @@
+const urlPrefix = "/Posture";
+
 const video = document.getElementById('video');
 const videoJquery = $('#video');
 const videoContainer = $("#video-container");
@@ -5,7 +7,7 @@ const calibrateContainer = $("#calibrate");
 const calibrating = $("#calibrating");
 const calibrateDoneContainer = $("#done-calibrating");
 const posture = new Audio();
-posture.src = "/Posture/Posture.m4a";
+posture.src = urlPrefix + "/Posture.m4a";
 
 const numCalibrations = 30;
 const numWrongFramesNeeded = 90;
@@ -22,10 +24,10 @@ let lastWarning = 0;
 let numWrongFrames = 0;
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/Posture/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/Posture/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/Posture/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/Posture/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri(urlPrefix + '/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri(urlPrefix + '/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri(urlPrefix + '/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri(urlPrefix + '/models')
 ]).then(startVideo).catch(e => {
   console.log("Yo");
   var element = document.createElement("P")
