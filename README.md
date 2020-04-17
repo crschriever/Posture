@@ -1,6 +1,6 @@
 # Posture
 
-visit crschriever.github.io/Posture
+visit https://crschriever.github.io/Posture
 
 ## Sources
 Uses face-api.js: https://justadudewhohacks.github.io/face-api.js/docs/index.html  
